@@ -6,7 +6,10 @@ def add_product():
     while p == "e":
         try:
             price = float(input("enter product price: "))
-            p = "r"
+            if price < 0:
+                print("just put positive numbers.")
+            else:
+                p = "r"
         except ValueError:
             print("enter only integers.")
 
@@ -26,9 +29,14 @@ def add_product():
     m.calculate.append(price * quantity)
 
 def show_product():
-    for data in m.inventory:
-        print(f"product: {data["name"]} | price {data["price"]} | quantity {data["quantity"]}")
-
+    if m.inventory: 
+        for data in m.inventory:
+            print(f"product: {data["name"]} | price {data["price"]} | quantity {data["quantity"]}")
+    else:
+        print("there is nothing.")
 def calculate():
-    total = sum(m.calculate)
-    print(f"the total is: {total}")
+    if m.calculate:
+        total = sum(m.calculate)
+        print(f"the total is: {total}")
+    else:
+        print("there is nothing.")
