@@ -1,12 +1,5 @@
+from fuctions import add_product, show_product, calculate
 p = "e"
-
-def add_product():
-    inventory = {}
-    product = input("enter product name: ")
-    price = float("enter product price: ")
-    quantity = int(input("enter product quantity: "))
-
-
 
 while p == "e":
     print("\n1.add product")
@@ -16,11 +9,11 @@ while p == "e":
     option = input("enter option: ")
 
     if option == "1":
-        print("hola")
+        add_product()
     elif option == "2":
-        print()
+        show_product()
     elif option == "3":
-        print()
+        calculate()
     elif option == "4":
         p = "r"
     else:
